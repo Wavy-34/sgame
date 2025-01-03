@@ -1,0 +1,18 @@
+{
+    "take_off_top": {
+        "_Card__name": "Take off top",
+        "_Card__type": "Task",
+        "_Card__cost": 0,
+        "_Card__reward": 1,
+        "_Card__description": "Only keep bra on (if you wear one)",
+        "_Card__id": 0
+    },
+    "lock_lips": {
+        "_Card__name": "Lock Lips",
+        "_Card__type": "Task",
+        "_Card__cost": 1,
+        "_Card__reward": 2,
+        "_Card__description": "X and Y have to kiss for 10d6 seconds",
+        "_Card__id": 0
+    }
+}

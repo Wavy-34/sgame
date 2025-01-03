@@ -1,0 +1,5 @@
+discord
+load_dotenv
+mypy
+ruff
+black
