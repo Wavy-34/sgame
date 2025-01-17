@@ -6,6 +6,7 @@ from sgame.errors import EnvVarNotFound
 
 load_dotenv()
 
+
 def unpack_env_var(key: str) -> Any:
     env_var = environ.get(key)
     if env_var is None:

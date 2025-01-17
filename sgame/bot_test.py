@@ -1,5 +1,5 @@
 import discord
-from discord.ext import commands
+from discord.ext import commands  # type: ignore
 
 from sgame.card import Card, Game, Player
 from sgame.create_card import get_cards
@@ -84,7 +84,8 @@ async def quit(ctx) -> None:  # discord command to quit the game
             del players[ctx.author.name]
             await ctx.send("You left the game")
             log.linfo(f"{ctx.author.name} quit the game")
-            log.linfo(f"The players are : {"".join(players.keys())}")
+            player_keys = "".join(players.keys())
+            log.linfo(f"The players are : {player_keys}")
         else:
             await ctx.send("You're not in a game!")
 
@@ -101,7 +102,10 @@ async def start(ctx) -> None:  # discord command to start the game
                 + ", ".join(player.get_nickname() for player in players.values())
             )
             log.linfo(
-                f"{ctx.author.name} start the game the player are {", ".join(player for player in players.keys())} and the cards are {", ".join(card.get_name() for card in cards)}"
+                f"{ctx.author.name} start the game the player are : "
+                + ", ".join(player for player in players.keys())
+                + " and the cards are "
+                + ", ".join(card.get_name() for card in cards)
             )
             game.start(players, cards)
         elif len(players) < 2:
