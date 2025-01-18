@@ -1,3 +1,4 @@
 discord
 load_dotenv
 audioop-lts
+requests

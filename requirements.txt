@@ -14,6 +14,10 @@ attrs==24.3.0
     # via aiohttp
 audioop-lts==0.2.1
     # via -r requirements.in
+certifi==2024.12.14
+    # via requests
+charset-normalizer==3.4.1
+    # via requests
 discord==2.3.2
     # via -r requirements.in
 discord-py==2.4.0
@@ -23,7 +27,9 @@ frozenlist==1.5.0
     #   aiohttp
     #   aiosignal
 idna==3.10
-    # via yarl
+    # via
+    #   requests
+    #   yarl
 load-dotenv==0.1.0
     # via -r requirements.in
 multidict==6.1.0
@@ -36,5 +42,9 @@ propcache==0.2.1
     #   yarl
 python-dotenv==1.0.1
     # via load-dotenv
+requests==2.32.3
+    # via -r requirements.in
+urllib3==2.3.0
+    # via requests
 yarl==1.18.3
     # via aiohttp
