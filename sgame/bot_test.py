@@ -1,4 +1,4 @@
-import discord
+import discord # type: ignore
 from discord.ext import commands  # type: ignore
 
 from sgame.card import Card, Game, Player

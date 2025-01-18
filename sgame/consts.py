@@ -1,6 +1,6 @@
 from os import environ
 from typing import Any
-from dotenv import load_dotenv
+from dotenv import load_dotenv # type: ignore
 
 from sgame.errors import EnvVarNotFound
 
