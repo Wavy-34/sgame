@@ -20,7 +20,8 @@ dependencies = [
     "multidict (==6.1.0)",
     "propcache (==0.2.1)",
     "python-dotenv (==1.0.1)",
-    "yarl (==1.18.3)"
+    "yarl (==1.18.3)",
+    "audioop-lts (==0.2.1)"
 ]
 
 
@@ -28,4 +29,7 @@ dependencies = [
 
 
 [tool.poetry.group.dev.dependencies]
+mypy = "^1.14.1"
+black = "^24.10.0"
+ruff = "^0.9.2"
 
