@@ -1,3 +1,4 @@
+from typing import Any
 import discord # type: ignore
 from discord.ext import commands  # type: ignore
 
@@ -21,7 +22,7 @@ cards: list[Card] = []
 admin: list[int] = [1285104552709849149]
 
 
-@BOT.hybrid_command(name="join", description="Join the game")
+@BOT.hybrid_command(name="join", description="Join the game") # type: ignore
 async def join(ctx) -> None:  # discord command to join the game
     global players
 
@@ -41,15 +42,15 @@ async def join(ctx) -> None:  # discord command to join the game
             )
 
 
-@BOT.hybrid_command(name="nickname", description="See or change you nickname")  # type: ignore
+@BOT.hybrid_command(name="nickname", description="See or change you nickname") # type: ignore
 async def nickname(
-    ctx, arg: str | None = None
+    ctx, arg: str | None
 ) -> None:  # discord command to see or change their nickname
     global players
     if isinstance(ctx.channel, discord.channel.DMChannel):
         player = players.get(ctx.author.name)
         if player:
-            if not arg:
+            if arg is None:
                 log.linfo(
                     f"{ctx.author.name} asked their nickname, it's {player.get_nickname()}"
                 )
@@ -64,7 +65,7 @@ async def nickname(
         await ctx.send("It only works in my DMs :3")
 
 
-@BOT.hybrid_command(name="deck", description="See the deck you're playing with")
+@BOT.hybrid_command(name="deck", description="See the deck you're playing with") # type: ignore
 async def deck(ctx) -> None:  # discord command to see the deck
     global players
     global cards
@@ -74,7 +75,7 @@ async def deck(ctx) -> None:  # discord command to see the deck
         await ctx.send(f"""**__{card.capitalize()} :__**\n\n__Type:__ {cards.get(card).get_type()}\n__Cost:__ {cards.get(card).get_cost()} \n__Reward:__ {cards.get(card).get_reward()} \n\n{cards.get(card).get_description()}""")  # type: ignore
 
 
-@BOT.hybrid_command(name="quit", description="Quit the game")
+@BOT.hybrid_command(name="quit", description="Quit the game") # type: ignore
 async def quit(ctx) -> None:  # discord command to quit the game
     global players
 
@@ -90,7 +91,7 @@ async def quit(ctx) -> None:  # discord command to quit the game
             await ctx.send("You're not in a game!")
 
 
-@BOT.hybrid_command(name="start", description="Start the game")
+@BOT.hybrid_command(name="start", description="Start the game") # type: ignore
 async def start(ctx) -> None:  # discord command to start the game
     global players
     global cards
