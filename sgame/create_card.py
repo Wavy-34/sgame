@@ -1,8 +1,8 @@
-import requests
+import requests  # type: ignore
 import json
 from typing import Any
 from sgame.card import Card
-from sgame.consts import DATABASE_ID, NOTION_TOKEN
+from sgame.consts import NOTION_DATABASE_ID, NOTION_TOKEN
 
 headers: dict[str, str] = {
     "Authorization": "Bearer " + NOTION_TOKEN,
@@ -26,7 +26,7 @@ def readDatabase(
 def create_cards() -> (
     None
 ):  # create a json file that contains instances of Card() from the info of readDatabase()
-    data: dict[str, list] = readDatabase(DATABASE_ID, headers)
+    data: dict[str, list] = readDatabase(NOTION_DATABASE_ID, headers)
 
     result: list = data.get("results")  # type: ignore
     cards: dict[str, Card] = {}
