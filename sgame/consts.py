@@ -1,6 +1,6 @@
 from os import environ
 from typing import Any
-from dotenv import load_dotenv # type: ignore
+from dotenv import load_dotenv  # type: ignore
 
 from sgame.errors import EnvVarNotFound
 
@@ -14,6 +14,11 @@ def unpack_env_var(key: str) -> Any:
     return env_var
 
 
-DATABASE_ID = unpack_env_var("DATABASE_ID")
+NOTION_DATABASE_ID = unpack_env_var("NOTION_DATABASE_ID")
 NOTION_TOKEN = unpack_env_var("NOTION_TOKEN")
+
 DISCORD_TOKEN = unpack_env_var("DISCORD_TOKEN")
+
+DATABASE_NAME = unpack_env_var("DATABASE_NAME")
+DATABASE_PASSWORD = unpack_env_var("DATABASE_PASSWORD")
+DATABASE_USER = unpack_env_var("DATABASE_USER")
