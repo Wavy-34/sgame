@@ -2,3 +2,4 @@ discord
 load_dotenv
 audioop-lts
 requests
+mysql.connector
